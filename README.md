@@ -21,33 +21,27 @@
 ## 安装与运行
 
 ### 1. 环境准备
-确保已安装 Python 3.12+。建议使用 `uv` 管理虚拟环境。
+确保已安装 `uv`。
 
 ```bash
-# 创建虚拟环境
-uv venv
-
-# 激活虚拟环境
-.venv\Scripts\activate
-
-# 安装依赖
-uv pip install -r requirements.txt
+# 初始化环境并安装依赖
+uv sync
 ```
 
 ### 2. 初始化数据库
 ```bash
-python init_db.py
+uv run init_db.py
 ```
 
 ### 3. 导入数据
 将 `人教版词汇表.xls` 放入项目根目录，运行：
 ```bash
-python import_excel.py
+uv run import_excel.py
 ```
 
 ### 4. 启动应用
 ```bash
-python app.py
+uv run app.py
 ```
 访问浏览器：`http://127.0.0.1:5000`
 
@@ -55,12 +49,7 @@ python app.py
 ```
 /
 ├── app.py              # Flask 主应用
-├── config.py           # 配置文件
-├── init_db.py          # 数据库初始化脚本
-├── import_excel.py     # Excel 导入脚本
-├── fix_data.py         # 数据修复脚本
-├── schema.sql          # 数据库结构 SQL
-├── requirements.txt    # 依赖列表
+├── pyproject.toml      # 项目配置与依赖
 ├── static/             # 静态资源 (JS/CSS)
 └── templates/          # HTML 模板
 ```
