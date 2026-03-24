@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+instance/
+.webassets-cache
+.env
+dictation.db
+*.db
+venv/
+.idea/
+.vscode/
